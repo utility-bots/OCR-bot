@@ -15,8 +15,7 @@ import pytesseract
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
 dir_path = os.path.dirname(os.path.realpath(__file__))
-bot = Bot(token='6257357498:AAH7fl4M6b2BEkKNY47cS1d7h9gpPbiB3Bg')  ## test
-# bot = Bot(token="6373938814:AAFcxCpoPid-JdogdKcGV-UgWM7fiT7ELkE")
+bot = Bot(token=TOKEN)
 
 dp = Dispatcher(bot)
 
@@ -36,9 +35,6 @@ class OCRBot:
         self.dp.register_message_handler(self.start, commands=["start"])
         self.dp.register_message_handler(self.get_user_images, content_types=types.ContentTypes.PHOTO)
         self.dp.register_message_handler(self.get_user_images_hq, content_types=types.ContentTypes.DOCUMENT)
-        # self.dp.register_message_handler(self.process_user_images,
-        #                                  content_types=types.ContentTypes.PHOTO | types.ContentTypes.DOCUMENT)
-
         self.dp.register_callback_query_handler(self.handle_query)
 
     def set_user_language(self):
