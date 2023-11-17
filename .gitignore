@@ -1,0 +1,9 @@
+venv
+log*
+pdfbot.log
+config.py
+.idea
+photos
+*.sql
+store.py
+test.py
